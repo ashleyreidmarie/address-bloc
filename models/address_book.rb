@@ -19,6 +19,7 @@ class AddressBook
     @entries.insert(index, Entry.new(name, phone_number, email))
   end
   
+  #removes all entries that match the name, phone number, and email in the entries array
   def remove_entry(name, phone_number, email)
     @entries.each do |entry|
       if name == entry.name && 
