@@ -31,4 +31,11 @@ class AddressBook
     end
   end
   
+  def entries_range
+    if @entries.count > 1
+      "(1 - #{@entries.count})"
+    else
+      "(#{@entries.count})"
+    end
+  end
 end

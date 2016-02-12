@@ -45,4 +45,17 @@ RSpec.describe AddressBook do
       expect(book.entries.size).to eq(0)
     end
   end
+  
+  describe "#entries_range" do
+    it "gives range (1-n) of how many entries are in address book" do
+      book = AddressBook.new
+      expect(book.entries_range).to eq("0")
+      
+      book.add_entry('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
+      book.add_entry('Monty Python', '010.011.2222', 'monty@python.com')
+      
+      expect(book.entries_range).to eq("(1 - 2)")
+    end
+  end
+  
 end
