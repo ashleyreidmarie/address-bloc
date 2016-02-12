@@ -7,6 +7,7 @@ class AddressBook
     @entries = []
   end
   
+  #adds entry in lexographical order as a new Entry
   def add_entry(name, phone_number, email)
     index = 0
     @entries.each do |entry|
