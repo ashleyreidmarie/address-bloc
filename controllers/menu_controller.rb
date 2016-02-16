@@ -114,7 +114,7 @@ class MenuController
   
   def search_entries
     print "Search by name: "
-    name = gets.chomp
+    name = gets.chomp.capitalize
     
     match = @address_book.binary_search(name)
     system "clear"
@@ -140,7 +140,7 @@ class MenuController
      print "Updated email: "
      email = gets.chomp
      
-     entry.name= = name if !name.empty?
+     entry.name = name if !name.empty?
      entry.phone_number = phone_number if !phone_number.empty?
      entry.email = email if !email.empty?
      
@@ -169,7 +169,6 @@ class MenuController
   end
   
   def entry_submenu(entry)
-    puts "Entry #{@address_book.entries.index(entry)+1}"
     puts entry.to_s
     puts "\nn - next entry"
     puts "d - delete entry"
@@ -208,6 +207,9 @@ class MenuController
       main_menu
     when "e"
       edit_entry(entry)
+      system "clear"
+      main_menu
+    when "m"
       system "clear"
       main_menu
     else
